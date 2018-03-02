@@ -1,0 +1,60 @@
+1: 进入项目文件，打开git bash here
+2: git status						查看修改的文件
+3: git add .						提交到暂存区
+4: git commit -m "zsn"				提交到git仓库
+5: git pull origin develop			获取最新的			（若两个人改到同一个地方，会有提示的）
+6: git push origin develop			提交最新的
+
+7: git diff：要查看尚未暂存的文件更新了哪些部分
+8: git diff --cached 查看已经暂存起来的变化
+
+
+
+git clone ssh://xxxxx.git 			下载项目
+
+git branch   查看分支
+
+git fetch origin develop:develop    创建分支  develop:develop本地develop对应远程develop
+git checkout develop						切换分支
+
+
+广西的东东:
+git fetch origin gx:gx
+git checkout gx
+ #git fetch origin develop:develop
+ git merge develop
+git push origin gx
+
+空项目创建分支
+1）现在项目中创建说明文件README.ND(文件名无关，只要有文件即可)
+2）git add .
+3） git commit -m 'init project'		
+4）git push origin master
+5）git checkout -b develop
+ 
+
+ git fetch --tag			获取远程最新的版本
+ git tag						查看当前版本 
+ git tag v0.0.01.01 -a -m ""    更新版本（版本+1）
+ git push origin --tag			向远程推送版本
+ 
+# 标签定义规则
+测试环境更新版本遵从四位版本号 更新第四位顺次加1 如遇到v0.0.01.99这种情况 第三位顺次加1为 v0.0.02.01 版本号如：v0.0.01.01  
+正式更新上线 由组长更新三位版本上线 版本号如：v0.0.01
+一般开发人员只需要更新四位版本，然后由测试组组长更新测试环境
+由开发组长更新三位版本号，然后推送上线
+
+
+切换分支：-----基于某个分支修改东东
+	git checkout v0.0.0.0.01       切换到这个tag上的代码---进行修改
+	git add .
+	git commit -a -m ';'				把这次修改的东西提交到 远程仓库中
+	git fetch --tag
+	git tag 
+	git tag v0.0.0.0.12				新打标签
+	git push origin --tag				推标签
+	git checkout develop			切换到原来的分支
+	
+	
+git tag -d  tagName				删除本地tag-------------
+

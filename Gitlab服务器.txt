@@ -1,0 +1,35 @@
+ubuntu 部署自己的Gitlab服务器
+
+sudo apt-get update
+sudo apt-get install -y curl openssh-server ca-certificates
+
+
+sudo apt-get install -y postfix
+安装邮件服务器
+
+curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
+下载Gitlab 包
+
+
+sudo EXTERNAL_URL="yourip:9000" apt-get install gitlab-ee
+安装Gitlab包
+
+
+sudo vi /etc/gitlab/gitlab.rb
+修改gitlab的配置文件
+
+external_url ''---------外部访问网址----一般为本机ip+port
+
+
+sudo gitlab-ctl reconfigure
+对Gitlab 进行重新配置并重启
+
+sudo gitlab-ctl status
+查看启动状态
+
+
+第一次进入会让你修改密码：
+ 默认的用户名：root    密码:5iveL!fe
+ 
+ 
+ 参考文献<http://blog.csdn.net/u011241606/article/details/51471367>
